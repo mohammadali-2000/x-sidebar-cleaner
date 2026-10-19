@@ -11,6 +11,7 @@ Thumbs.db
 *.pem
 *.crx
 *.zip
+dist/
 
 # Logs
 npm-debug.log*

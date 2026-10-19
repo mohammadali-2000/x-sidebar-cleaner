@@ -162,6 +162,21 @@ Firefox currently supports Manifest V3 with subtle differences in background ser
 
 ---
 
+## 🏪 Chrome Web Store Publishing Package
+
+This repository is fully prepared for instant publishing to the **Google Chrome Web Store**:
+
+- **Master Store Specification:** See [`CHROMEWEBSTORE.md`](CHROMEWEBSTORE.md) for pre-written titles, descriptions, permission justifications, and developer compliance answers.
+- **Privacy Policy:** See [`PRIVACY.md`](PRIVACY.md) (required by Google Chrome Web Store review guidelines).
+- **Official Store Graphics:** High-resolution assets generated in `promo/` meeting all CWS pixel dimensions:
+  - `store-screenshot-1.png` (1280×800)
+  - `store-screenshot-2.png` (1280×800)
+  - `small-promo-440x280.png` (440×280)
+  - `marquee-promo-1400x560.png` (1400×560)
+- **Production ZIP Package:** Run `npm run package` to generate `dist/x-sidebar-cleaner-v1.0.0.zip` ready for one-click upload in the [Chrome Developer Dashboard](https://chrome.google.com/webstore/devconsole).
+
+---
+
 ## 🔒 Privacy & Permissions Disclosure
 
 - **`storage` permission:** Used solely to store your enabled/disabled toggle preference locally via `chrome.storage.sync` (or `chrome.storage.local`).
