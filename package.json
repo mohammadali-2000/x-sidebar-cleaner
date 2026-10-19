@@ -1,0 +1,20 @@
+{
+  "name": "x-sidebar-cleaner",
+  "version": "1.0.0",
+  "description": "Cross-browser extension (Manifest V3) to cleanly remove the 'What’s happening' trending sidebar from X (Twitter) while preserving 'Who to follow' and the main timeline.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "manifest-v3",
+    "twitter",
+    "x",
+    "x-cleaner",
+    "privacy",
+    "browser-extension"
+  ],
+  "author": "Syed Mohammad Ali",
+  "license": "MIT"
+}

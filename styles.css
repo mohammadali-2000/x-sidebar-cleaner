@@ -1,0 +1,33 @@
+/**
+ * X Sidebar Cleaner — Content Stylesheet
+ * Declarative styles to eliminate the "What's happening" trending card
+ * with zero Flash of Unstyled Content (FOUC).
+ */
+
+/* 1. Elements explicitly tagged by the JavaScript cleaner engine */
+[data-x-sidebar-cleaner-hidden="true"] {
+  display: none !important;
+}
+
+/* 2. Declarative rules active when extension is enabled (default) */
+html[data-x-sidebar-cleaner-enabled="true"] [data-testid="sidebarColumn"] [aria-label="Timeline: Trending now"],
+html[data-x-sidebar-cleaner-enabled="true"] [data-testid="sidebarColumn"] [aria-label*="Trending now" i],
+html[data-x-sidebar-cleaner-enabled="true"] [data-testid="sidebarColumn"] [aria-label*="Timeline: Trending" i] {
+  display: none !important;
+}
+
+/* 3. Card-level container targeting using CSS :has() */
+/* Hide the card wrapper if it exclusively houses trending topics and not "Who to follow" */
+html[data-x-sidebar-cleaner-enabled="true"] [data-testid="sidebarColumn"] section:has([data-testid="trend"]):not(:has([data-testid="UserCell"])):not(:has([aria-label*="Who to follow" i])),
+html[data-x-sidebar-cleaner-enabled="true"] [data-testid="sidebarColumn"] aside:has([data-testid="trend"]):not(:has([data-testid="UserCell"])):not(:has([aria-label*="Who to follow" i])),
+html[data-x-sidebar-cleaner-enabled="true"] [data-testid="sidebarColumn"] div:has(> [aria-label*="Trending now" i]) {
+  display: none !important;
+}
+
+/* 4. Ensure Who to Follow and Primary Feed are never hidden */
+[data-testid="primaryColumn"],
+[data-testid="sidebarColumn"] [aria-label*="Who to follow" i],
+[data-testid="sidebarColumn"] [data-testid="UserCell"],
+[data-testid="SearchBox_Search_Input"] {
+  display: revert;
+}
